@@ -1,0 +1,24 @@
+Установка реакта
+    npx create-react-app my-app
+    cd my-app
+    npm start
+
+В return может быть только 1 div
+<App /> можно втавлять в другие компоненты
+import {любое название} from "./Tehnologis";
+
+Вставка хтмл
+const App = () =>{
+  <Header />
+  return (
+    <div className="App">
+      SImple html
+    </div>
+  );
+}
+
+<App />
+
+
+Терминология
+Компонента - это функция, возвращающая разметку JSX
