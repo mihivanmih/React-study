@@ -5,27 +5,10 @@
   margin: 0 auto;
 }
 
-.header {
-  width: 100%;
-}
-
-.header__logo {
-  width: 100px;
-}
-
-.leftMenu {
-  width: 10%;
-}
-
-.main {
+.app-wrapper-content {
   width: 90%;
+  background: aliceblue;
 }
 
-.main__top {
-  height: 200px;
-  overflow: hidden;
-}
 
-.main__fon {
-  width: 100%;
-}
+

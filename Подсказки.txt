@@ -3,6 +3,27 @@
     cd my-app
     npm start
 
+Ошибки при установке
+
+"react-scripts" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+    npm install
+    npm install react-scripts --save
+    npm i react-router-dom -save
+
+
+Git
+
+gitk --all& - все коммиты
+git checkout 58557edea8720b2bb6044a48a6987d6d95b66c49
+В редакторе
+Checkout Revision '58557edea8720b2bb6044a48a6987d6d95b66c49'
+Version Control (правой мышкой) -> Copy Revision Number
+
+
+
+
 В return может быть только 1 div
 <App /> можно втавлять в другие компоненты
 import {любое название} from "./Tehnologis";
@@ -22,3 +43,26 @@ const App = () =>{
 
 Терминология
 Компонента - это функция, возвращающая разметку JSX
+Компонента - это тег
+
+
+Уроки
+    2 класса
+    className={`${s.item} ${s.active}`}
+
+    Роуты
+    что бы работали npm i react-router-dom -save
+
+    <Route path='/dialogs' component={Dialogs}/>
+    Роуты должны быть обернуты в <BrowserRouter>
+
+    <Route exact path='/dialogs' component={Dialogs}/>
+    exact точное совпадение
+
+
+
+    Вместо ссылок используем
+    <NavLink className={s.item} to="/music">Music</NavLink><br/>
+
+    Своя активная ссылка
+    <NavLink className={s.item} activeClassName={s.active} to="/profile">Profile</NavLink>

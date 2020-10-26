@@ -1,0 +1,24 @@
+.main {
+    width: 90%;
+    background: greenyellow;
+}
+
+.main__top {
+    height: 200px;
+    overflow: hidden;
+}
+
+.main__fon {
+    width: 100%;
+}
+
+.item {
+    color: #13ff50;
+    background: #37c7ff;
+}
+
+.ava {
+    width: 50px;
+    border-radius: 50px;
+}
+

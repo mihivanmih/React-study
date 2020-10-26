@@ -1,0 +1,32 @@
+.dialogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dialogs__tems {
+    width: calc(20% - 20px);
+    padding: 10px;
+}
+
+.dialogs_item {
+
+}
+
+.item {
+    color: #000;
+    text-decoration: none;
+}
+
+.active {
+    color: #07ff3f;
+}
+
+.messages {
+    width: calc(80% - 20px);
+    padding: 10px;
+}
+
+.message {
+
+}

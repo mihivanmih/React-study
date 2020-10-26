@@ -1,0 +1,20 @@
+.leftMenu {
+    width: calc(10% - 20px);
+    background: #58c476;
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.item {
+    color: #fff;
+    text-decoration: none;
+}
+
+.item:hover {
+    color: #fffd47;
+    text-decoration: underline;
+}
+
+.active {
+    color: #fffd47;
+}
