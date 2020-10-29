@@ -22,3 +22,10 @@
     border-radius: 50px;
 }
 
+.padding {
+    padding: 10px;
+}
+
+.padding_top {
+    padding-top: 10px;
+}

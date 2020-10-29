@@ -10,7 +10,9 @@
 }
 
 .dialogs_item {
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
 }
 
 .item {
@@ -29,4 +31,12 @@
 
 .message {
 
+}
+
+.dialogs__avatar {
+    width: 50px;
+}
+.dialogs__avatar img {
+    width: 100%;
+    border-radius: 50px;
 }

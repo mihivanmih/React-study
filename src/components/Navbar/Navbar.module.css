@@ -1,5 +1,5 @@
 .leftMenu {
-    width: calc(10% - 20px);
+    width: calc(20% - 20px);
     background: #58c476;
     text-align: left;
     padding: 20px 10px;
@@ -17,4 +17,25 @@
 
 .active {
     color: #fffd47;
+}
+
+.dialogs_item {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dialogs__avatar {
+    width: 20px;
+}
+.dialogs__avatar img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+
+.avatar__block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }

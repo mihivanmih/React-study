@@ -45,6 +45,11 @@ const App = () =>{
 Компонента - это функция, возвращающая разметку JSX
 Компонента - это тег
 
+Горячие клавиши
+alt + enter = импортировать
+Alt + J = одинаковые куски
+Ctrl + Alt + Shift + J = все одинаковые куски
+Ctrl + Shift + N = Открыть файл и папку с ним
 
 Уроки
     2 класса
@@ -59,6 +64,13 @@ const App = () =>{
     <Route exact path='/dialogs' component={Dialogs}/>
     exact точное совпадение
 
+    let SomeComponent = () => <Dialogs />
+    <Route path='/dialogs' component={ SomeComponent }/>
+
+    <Route path='/dialogs' render={ () => <Dialogs /> }/>  - лучше использовать
+    <Route path='/dialogs' component={ () => <Dialogs /> }/>
+    <Route path='/profile'> <Profile PostsData={props.PostsData} /> </Route>
+
 
 
     Вместо ссылок используем
@@ -66,3 +78,67 @@ const App = () =>{
 
     Своя активная ссылка
     <NavLink className={s.item} activeClassName={s.active} to="/profile">Profile</NavLink>
+
+
+   Пропсы
+   <DialogItem name="Dima" link="1"/>
+   Получение
+   <NavLink to={"/dialogs/"+props.link}>{props.name}</NavLink>
+   <NavLink to={path}>{props.name}</NavLink>
+
+    Отобразить массив в строку
+    { ['test1','test2','test3','test4']  }
+
+
+    onClick
+    onClick={ () => { alert('test')} }
+
+
+    Рефы
+    let newPostElement = React.createRef();
+    <textarea ref={newPostElement} ></textarea>
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        return alert(text);
+    }
+
+    Импорт из одного файла
+    import state, {addPost} from "./redux/state";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

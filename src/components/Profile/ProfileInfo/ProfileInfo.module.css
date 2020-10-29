@@ -1,0 +1,17 @@
+.main__top {
+    height: 200px;
+    overflow: hidden;
+}
+
+.main__fon {
+    width: 100%;
+}
+
+.item {
+    color: #ff0000;
+    background: aqua;
+}
+
+.padding {
+    padding: 10px;
+}
