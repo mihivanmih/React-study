@@ -8,17 +8,26 @@ const Dialogs = (props) => {
     let dialogsElements = props.state.dialogsData.map(dialog => <DialogItem name={dialog.name} link={dialog.id}
                                                                             avatar={dialog.avatar}/>);
     let messagesElements = props.state.messagesData.map(message => <Message message={message.message}/>);
-
     let newMessageElement = React.createRef();
+
+
+    let addMessageActionCreated = () => {
+        return {type: 'ADDD_MESSAGE'}
+    }
+
+    let updateNewMessageTextActionCreated = (text) => {
+        return {type: 'UPDATE_NEW_MESSAGE_TEXT', newMessage: text}
+    }
 
     let addMessage = () => {
         let text = newMessageElement.current.value;
-        props.addMessage(text);
+        props.dispatch(addMessageActionCreated());
     }
 
-    let onChange = () => {
-        let text = newMessageElement.current.value;
-        props.updateNewMessageText(text);
+    let onChange = (e) => {
+       // let text = newMessageElement.current.value;
+        let text = e.target.value;
+        props.dispatch(updateNewMessageTextActionCreated(text));
     }
 
 
@@ -34,7 +43,8 @@ const Dialogs = (props) => {
                 <br/>
 
                 <div>
-                    <textarea name="" ref={newMessageElement} onChange={onChange} id="new-post" value={props.state.NewMessageText}></textarea>
+                    <textarea name="" ref={newMessageElement} onChange={onChange} id="new-post"
+                              value={props.state.NewMessageText}></textarea>
                 </div>
                 <div className={s.padding_top}>
                     <button onClick={addMessage}>Add post</button>

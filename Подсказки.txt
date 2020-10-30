@@ -50,6 +50,8 @@ alt + enter = импортировать
 Alt + J = одинаковые куски
 Ctrl + Alt + Shift + J = все одинаковые куски
 Ctrl + Shift + N = Открыть файл и папку с ним
+Ctrl + Shift + V = Создать переменную
+
 
 Уроки
     2 класса
@@ -106,11 +108,38 @@ Ctrl + Shift + N = Открыть файл и папку с ним
     import state, {addPost} from "./redux/state";
 
 
+    Функции в переменных
+
+    let page = {
+        title: 'samsung',
+        content: '',
+        _contener: '', //договоренность внешне не использовать
+        setContent(value){
+            //log
+            //value SSX
+            this._content = value;
+        },
+        getContent() {
+            return this._content;
+        },
+        render () {
+            document.title = this.title;
+            document.write(this.content);
+        }
+    }
+
+    page.content = "<div>Content about React Js</div>";
+    page.setContent = "<div>Content about React Js</div>";
+    console.log(page.getContent());
+    page.render();
+
+    Bind позволяет зафиксировать this
+    <App state={store.getState()} addPost={store.addPost.bind(store)} addMessage={store.addMessage.bind(store)} />
 
 
-
-
-
+    Получить значение
+    let text = e.target.value;
+    let text = newMessageElement.current.value;
 
 
 
