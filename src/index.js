@@ -5,17 +5,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {addMessage, addPost, updateNewMessageText, updateNewPostText} from "./redux/store";
+import StoreContext from "./StoreContext";
 
 
 let renderEntireTree = (state) => {
 
     ReactDOM.render(
         <React.StrictMode>
-            <App state={store.getState()} store={store}
-                 dispatch={store.dispatch.bind(store)}/>
-        </React.StrictMode>,
-        document.getElementById('root')
-    );
+            <StoreContext.Provider value={store}>
+                <App />
+                 {/*<App state={store.getState()} store={store}
+                 dispatch={store.dispatch.bind(store)}/>*/}
+            </StoreContext.Provider>
+</React.StrictMode>,
+document.getElementById('root')
+);
 
 }
 

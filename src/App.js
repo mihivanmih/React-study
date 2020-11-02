@@ -10,18 +10,40 @@ import Music from "./components/Music/News";
 import Settings from "./components/Settings/Settings";
 import store, {updateNewPostText} from "./redux/store";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import StoreContext from "./StoreContext";
 
 const App = (props) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <NavBar state={props.state.sidebar}/>
+                <StoreContext.Consumer>
+                    {
+                        (store) => (
+                         <NavBar state={store.getState().sidebar}/>
+                    )
+                    }
+                </StoreContext.Consumer>
                 <div className="app-wrapper-content">
-                    <Route path='/profile'> <Profile store={props.store} />
+                    <Route path='/profile'>
+                        <StoreContext.Consumer>
+                            {
+                            (store) => (
+                                <Profile store={store}/>
+                                )
+                            }
+                        </StoreContext.Consumer>
                     </Route>
                     <Route path='/dialogs'
-                           render={() => <DialogsContainer store={props.store} />}/>
+                           render={() =>
+                               <StoreContext.Consumer>
+                                   {
+                                       (store) => (
+                               <DialogsContainer store={store} />
+                                       )
+                                   }
+                               </StoreContext.Consumer>
+                           }/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
