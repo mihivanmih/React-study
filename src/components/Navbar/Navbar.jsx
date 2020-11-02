@@ -17,7 +17,7 @@ const FriendItem = (props) => {
 
 const NavBar = (props) => {
 
-    let leftMenufriendsElement = props.state.leftMenufriends.map( dialog =>  <FriendItem name={dialog.name} link={dialog.id} avatar={dialog.avatar}/>);
+    let leftMenufriendsElement = props.state.sidebar.leftMenufriends.map( dialog =>  <FriendItem name={dialog.name} link={dialog.id} avatar={dialog.avatar}/>);
 
     return (
         <section className={s.leftMenu}>

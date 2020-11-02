@@ -3,6 +3,11 @@
     cd my-app
     npm start
 
+    ctrl + c - выйти из редактора
+
+    npm install redux --save - установка redux
+
+
 Ошибки при установке
 
 "react-scripts" не является внутренней или внешней
@@ -51,6 +56,7 @@ Alt + J = одинаковые куски
 Ctrl + Alt + Shift + J = все одинаковые куски
 Ctrl + Shift + N = Открыть файл и папку с ним
 Ctrl + Shift + V = Создать переменную
+Заемнить if на swith = клик по if восклицательный знак Replace Swith
 
 
 Уроки

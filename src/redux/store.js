@@ -1,3 +1,6 @@
+import profileReducer from "./profileReducer";
+import messageReducer from "./messagesReducer";
+
 const ADDD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADDD_MESSAGE = 'ADDD_MESSAGE';
@@ -13,7 +16,7 @@ let store = {
                 {id: 4, message: 'Hi, Jonny', likeCount: '11'},
                 {id: 4, message: 'Hi, Jon', likeCount: '345'},
             ],
-            NewPostText: 'it super.com'
+            NewPostText: 'it super.com!'
         },
         messagesPage: {
             dialogsData: [
@@ -51,7 +54,7 @@ let store = {
                 {id: 5, message: 'Yo', id_user: '1'},
                 {id: 6, message: 'Yo Yo Yo', id_user: '2'},
             ],
-            NewMessageText: 'Yoooohoooooo'
+            NewMessageText: 'Yoooohoooooo!'
         },
         sidebar: {
             leftMenufriends: [
@@ -84,50 +87,11 @@ let store = {
         this._renderEntireTree = observer;
     },
 
-    _addPost(likeCount) {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.NewPostText,
-            likeCount: likeCount
-        };
+    dispatch: function (action) { // { type: 'ADD-POST' }
 
-        this._state.profilePage.PostsData.push(newPost);
-        // this._state.profilePage.NewPostText  = "";
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messageReducer(this._state.messagesPage, action);
         this._renderEntireTree(this._state);
-    },
-    _updateNewPostText(newText) {
-        this._state.profilePage.NewPostText = newText;
-        this._renderEntireTree(this._state);
-    },
-
-    _addMessage() {
-
-        let newMessage = {
-            id: 5,
-            message: this._state.messagesPage.NewMessageText,
-            id_user: 1
-        };
-
-        this._state.messagesPage.messagesData.push(newMessage);
-        this._state.messagesPage.NewMessageText = "";
-        this._renderEntireTree(this._state);
-    },
-    _updateNewMessageText(newMessage) {
-        this._state.messagesPage.NewMessageText = newMessage;
-        this._renderEntireTree(this._state);
-    },
-
-    dispatch(action) { // { type: 'ADD-POST' }
-
-        if (action.type === ADDD_POST) {
-            this._addPost(action.likeCount);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._updateNewPostText(action.newText);
-        } else if (action.type === ADDD_MESSAGE) {
-            this._addMessage();
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._updateNewMessageText(action.newMessage);
-        }
 
     }
 }
